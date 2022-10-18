@@ -11,7 +11,9 @@ while battleStart == False:
 
 # Start the battle
 while gameOver == False:
-    print(userPokemon.name + '\n  Health: ' + str(userPokemon.health) + '\n' + compPokemon.name + '\n  Health: ' + str(compPokemon.health))
+    formattedUser = '{:.0f}'.format(userPokemon.health)
+    formattedComp = '{:.0f}'.format(compPokemon.health)
+    print(userPokemon.name + '\n  Health: ' + formattedUser + '\n' + compPokemon.name + '\n  Health: ' + formattedComp)
     # Have the current player select a move
     validMove, move, moveDamage, moveText = functions.selectMove(currPlayer, userPokemon, compPokemon)
     # If the move is valid, have it deal damage. If not, ask for move again
